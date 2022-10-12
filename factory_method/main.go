@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	hubbaBubba := getGum("Hubba Bubba")
-	loveIs := getGum("Love Is")
+	hubbaBubba := getGum(HubbaBubba)
+	loveIs := getGum(LoveIs)
 
 	if hubbaBubba != nil {
 		hubbaBubba.printDetails()
@@ -18,7 +18,7 @@ func main() {
 
 	fmt.Println()
 	// инициализация несуществующего объекта
-	otherGum := getGum("Orbit")
+	otherGum := getGum("Orbit") // nil
 	if otherGum != nil {
 		otherGum.printDetails()
 	}

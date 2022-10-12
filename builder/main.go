@@ -4,8 +4,8 @@ import "fmt"
 
 func main() {
 	// инициализация билдеров для разных видов типа House
-	woodenBuilder := getBuilder("wooden")
-	iglooBuilder := getBuilder("igloo")
+	woodenBuilder := getBuilder(Wooden)
+	iglooBuilder := getBuilder(Igloo)
 
 	// создание новой струтуры Director с одним из билдеров
 	director := newDirector(woodenBuilder)

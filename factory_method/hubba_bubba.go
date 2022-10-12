@@ -18,7 +18,7 @@ func (h hubbaBubba) printDetails() {
 func newHubbaBubba() IGum {
 	return &hubbaBubba{
 		Gum: Gum{
-			name:  "Hubba Bubba Gum",
+			name:  HubbaBubba,
 			taste: "strawberry",
 		},
 		numInPack: 5,

@@ -15,7 +15,7 @@ func (l loveIs) printDetails() {
 func newLoveIs() IGum {
 	return &loveIs{
 		Gum: Gum{
-			name:  "Love Is Gum",
+			name:  LoveIs,
 			taste: "pineapple",
 		},
 	}

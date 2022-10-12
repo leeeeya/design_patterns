@@ -2,6 +2,11 @@ package main
 
 import "log"
 
+const (
+	Wooden = "Wooden"
+	Igloo  = "Igloo"
+)
+
 // Builder определяет методы для сборки структуры House
 type Builder interface {
 	setHouseType()
@@ -14,9 +19,9 @@ type Builder interface {
 // getBuilder возвращает билдера в зависимости от вида объекта
 func getBuilder(builderType string) Builder {
 	switch builderType {
-	case "wooden":
+	case Wooden:
 		return newWoodenBuilder()
-	case "igloo":
+	case Igloo:
 		return newIglooBuilder()
 	default:
 		log.Printf("%s: Wrong type passed\n", builderType)

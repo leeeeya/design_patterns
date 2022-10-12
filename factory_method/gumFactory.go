@@ -4,6 +4,11 @@ import (
 	"log"
 )
 
+const (
+	HubbaBubba = "Hubba Bubba Gum"
+	LoveIs     = "Love Is Gum"
+)
+
 // IGum основной интерфейс поведения фабрики
 type IGum interface {
 	getName() string
@@ -16,12 +21,12 @@ type IGum interface {
 // фабричный метод - создаёт новый интерфейс в зависимости от вида (входных данных)
 func getGum(gumType string) IGum {
 	switch gumType {
-	case "Hubba Bubba":
+	case HubbaBubba:
 		return newHubbaBubba()
-	case "Love Is":
+	case LoveIs:
 		return newLoveIs()
 	default:
-		log.Printf("%s: Wrong type passed", gumType)
+		log.Printf("%s: Wrong type passed!", gumType)
 		return nil
 	}
 }

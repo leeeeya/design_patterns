@@ -15,7 +15,7 @@ func newWoodenBuilder() *WoodenBuilder {
 
 // импелементация методов для построения определённого объекта
 func (b *WoodenBuilder) setHouseType() {
-	b.houseType = "Wooden"
+	b.houseType = Wooden
 }
 
 func (b *WoodenBuilder) setWindowType() {

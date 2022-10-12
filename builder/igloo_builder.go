@@ -15,7 +15,7 @@ func newIglooBuilder() *IglooBuilder {
 
 // импелементация методов для построения определённого объекта
 func (b *IglooBuilder) setHouseType() {
-	b.houseType = "Igloo"
+	b.houseType = Igloo
 }
 
 func (b *IglooBuilder) setWindowType() {
