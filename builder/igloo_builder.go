@@ -1,5 +1,6 @@
 package main
 
+// IglooBuilder струтура для определённого вида объекта
 type IglooBuilder struct {
 	houseType  string
 	windowType string
@@ -7,10 +8,12 @@ type IglooBuilder struct {
 	floor      int
 }
 
+// билдер для конкретного типа дома
 func newIglooBuilder() *IglooBuilder {
 	return &IglooBuilder{}
 }
 
+// импелементация методов для построения определённого объекта
 func (b *IglooBuilder) setHouseType() {
 	b.houseType = "Igloo"
 }
@@ -27,8 +30,9 @@ func (b *IglooBuilder) setNumFloor() {
 	b.floor = 1
 }
 
-func (b *IglooBuilder) getHouse() House {
-	return House{
+// getHouse получение готового объекта типа House
+func (b *IglooBuilder) getHouse() *House {
+	return &House{
 		houseType:  b.houseType,
 		doorType:   b.doorType,
 		windowType: b.windowType,

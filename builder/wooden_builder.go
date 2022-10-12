@@ -1,5 +1,6 @@
 package main
 
+// WoodenBuilder струтура для определённого вида объекта
 type WoodenBuilder struct {
 	houseType  string
 	windowType string
@@ -12,7 +13,7 @@ func newWoodenBuilder() *WoodenBuilder {
 	return &WoodenBuilder{}
 }
 
-//
+// импелементация методов для построения определённого объекта
 func (b *WoodenBuilder) setHouseType() {
 	b.houseType = "Wooden"
 }
@@ -29,8 +30,9 @@ func (b *WoodenBuilder) setNumFloor() {
 	b.floor = 2
 }
 
-func (b *WoodenBuilder) getHouse() House {
-	return House{
+// getHouse получение готового объекта типа House
+func (b *WoodenBuilder) getHouse() *House {
+	return &House{
 		houseType:  b.houseType,
 		doorType:   b.doorType,
 		windowType: b.windowType,

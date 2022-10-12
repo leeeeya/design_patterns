@@ -11,7 +11,10 @@ type House struct {
 }
 
 // Print выводит информацию о готовом объекте
-func (h House) Print() {
+func (h *House) Print() {
+	if h == nil {
+		return
+	}
 	fmt.Printf("House type: %s\n", h.houseType)
 	fmt.Printf("Door type: %s\n", h.doorType)
 	fmt.Printf("Window type: %s\n", h.windowType)
