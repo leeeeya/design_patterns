@@ -1,49 +1,54 @@
-package state
+package main
 
 import (
 	"fmt"
-	"log"
 )
 
 func main() {
-	vendingMachine := newVendingMachine(1, 10)
+	// создание нового объекта контекста с исходными параметрами
+	vendingMachine := newVendingMachine(0, 10)
 
+	fmt.Println()
+	// запрос на выдачу предмета
 	err := vendingMachine.requestItem()
 	if err != nil {
-		log.Fatalf(err.Error())
+		fmt.Println(err.Error())
 	}
 
+	// внесение оплаты
 	err = vendingMachine.insertMoney(10)
 	if err != nil {
-		log.Fatalf(err.Error())
+		fmt.Println(err.Error())
 	}
 
+	// выдача предмета
 	err = vendingMachine.dispenseItem()
 	if err != nil {
-		log.Fatalf(err.Error())
+		fmt.Println(err.Error())
 	}
 
 	fmt.Println()
 
-	err = vendingMachine.addItem(2)
+	// добавление определённого количества предметов в автомат
+	err = vendingMachine.addItem(1)
 	if err != nil {
-		log.Fatalf(err.Error())
+		fmt.Println(err.Error())
 	}
 
 	fmt.Println()
 
 	err = vendingMachine.requestItem()
 	if err != nil {
-		log.Fatalf(err.Error())
+		fmt.Println(err.Error())
 	}
 
-	err = vendingMachine.insertMoney(10)
+	err = vendingMachine.insertMoney(9)
 	if err != nil {
-		log.Fatalf(err.Error())
+		fmt.Println(err.Error())
 	}
 
 	err = vendingMachine.dispenseItem()
 	if err != nil {
-		log.Fatalf(err.Error())
+		fmt.Println(err.Error())
 	}
 }
