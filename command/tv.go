@@ -7,7 +7,7 @@ type Tv struct {
 	isRunning bool
 }
 
-// реализация интерфейса Device
+// имплементация интерфейса Device
 func (t *Tv) on() {
 	t.isRunning = true
 	fmt.Println("Turning tv on")

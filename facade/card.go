@@ -14,7 +14,7 @@ type Card struct {
 
 // CheckBalance проверка баланса карты
 func (c Card) CheckBalance() error {
-	fmt.Println("[Карта] Запрос в банк для проверки остатка")
+	fmt.Println("[Card] Request to the bank to check the balance")
 	time.Sleep(time.Millisecond * 800)
 	return c.bank.CheckBalance(c.name)
 }

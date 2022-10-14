@@ -20,9 +20,9 @@ func (b Bank) CheckBalance(cardNum string) error {
 			continue
 		}
 		if card.balance <= 0 {
-			return fmt.Errorf("[Банк] Недостаточно средств\n")
+			return fmt.Errorf("[Bank] Insufficient funds\n")
 		}
 	}
-	fmt.Println("[Банк] Остаток положительный")
+	fmt.Println("[Bank] The balance is positive")
 	return nil
 }

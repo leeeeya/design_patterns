@@ -13,21 +13,21 @@ type Shop struct {
 
 // Selling метод, имитирующий процесс покупки - фасад для взаимодействия с другими сервисами
 func (s Shop) Selling(a Account, product string) error {
-	fmt.Println("[Магазин] Запрос к пользователю для получения остата по карте")
+	fmt.Println("[Shop] Request to the user to receive the balance on the card")
 	time.Sleep(time.Millisecond * 500)
 	if err := a.card.CheckBalance(); err != nil {
 		return err
 	}
-	fmt.Printf("[Магазин] Проверка, может ли пользователь %s купить товар %s\n", a.name, product)
+	fmt.Printf("[Shop] Checking if user %s can buy an item %s\n", a.name, product)
 	time.Sleep(time.Millisecond * 500)
 	for _, p := range s.products {
 		if p.name != product {
 			continue
 		}
 		if p.price >= a.GetBalance() {
-			return fmt.Errorf("[Магазин] Недостаточно средств для покупки товара\n")
+			return fmt.Errorf("[Shop] Insufficient funds to buy product\n")
 		}
-		fmt.Printf("[Магазин] Товар %s куплен\n", p.name)
+		fmt.Printf("[Shop] Product %s is bought\n", p.name)
 	}
 	return nil
 }

@@ -21,11 +21,11 @@ var (
 		bank:    &bank,
 	}
 	customer1 = Account{
-		name: "Покупатель-1",
+		name: "Customer-1",
 		card: &card1,
 	}
 	customer2 = Account{
-		name: "Покупатель-2",
+		name: "Customer-2",
 		card: &card2,
 	}
 	product = Product{
@@ -41,7 +41,7 @@ var (
 )
 
 func main() {
-	fmt.Println("[Банк] Выпуск карт")
+	fmt.Println("[Bank] Issuance of cards")
 	bank.cards = append(bank.cards, card1, card2)
 	fmt.Println()
 
@@ -50,7 +50,7 @@ func main() {
 	if err := shop.Selling(customer1, product.name); err != nil {
 		log.Print(err)
 	}
-	
+
 	fmt.Println()
 
 	// покупка товара вторым покупателем
