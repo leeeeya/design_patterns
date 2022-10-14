@@ -1,21 +1,12 @@
 package main
 
-import "fmt"
-
+// Account описание покупателя
 type Account struct {
 	name string
+	card *Card // карта для оплачивания
 }
 
-func newAccount(accountName string) *Account {
-	return &Account{
-		name: accountName,
-	}
-}
-
-func (a *Account) checkAccount(accountName string) error {
-	if a.name != accountName {
-		return fmt.Errorf("Account Name is incorrect")
-	}
-	fmt.Println("Account Verified")
-	return nil
+// GetBalance получение баланса карты покупателя
+func (a Account) GetBalance() float64 {
+	return a.card.balance
 }
