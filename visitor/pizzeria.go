@@ -1,15 +1,10 @@
 package main
 
-// Pizzeria implements the Place interface.
+// Pizzeria "элемент", который можно посетить
 type Pizzeria struct {
 }
 
-// Accept implementation.
+// Accept имплементация метода посещения
 func (p *Pizzeria) Accept(v Visitor) string {
 	return v.VisitPizzeria(p)
-}
-
-// BuyPizza implementation.
-func (p *Pizzeria) BuyPizza() string {
-	return "Buy pizza..."
 }

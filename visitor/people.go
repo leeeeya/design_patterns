@@ -1,22 +1,23 @@
-// конкретный посетитель
-
 package main
 
-// People implements the Visitor interface.
+import "fmt"
+
+// People конкретный посетитель, реализующий интерфейс Visitor
 type People struct {
+	name string
 }
 
-// VisitSushiBar implements visit to SushiBar.
+// VisitSushiBar реализация метода посещения SushiBar.
 func (v *People) VisitSushiBar(p *SushiBar) string {
-	return p.BuySushi()
+	return fmt.Sprintf("%s buys suhhi\n", v.name)
 }
 
-// VisitPizzeria implements visit to Pizzeria.
+// VisitPizzeria реализация метода посещения Pizzeria.
 func (v *People) VisitPizzeria(p *Pizzeria) string {
-	return p.BuyPizza()
+	return fmt.Sprintf("%s buys pizza\n", v.name)
 }
 
-// VisitBurgerBar implements visit to BurgerBar.
+// VisitBurgerBar реализация метода посещения BurgerBar.
 func (v *People) VisitBurgerBar(p *BurgerBar) string {
-	return p.BuyBurger()
+	return fmt.Sprintf("%s buys burger\n", v.name)
 }

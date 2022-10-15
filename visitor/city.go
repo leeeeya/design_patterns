@@ -1,16 +1,16 @@
 package main
 
-// City implements a collection of places to visit.
+// City множество "элементов", которые можно посетить
 type City struct {
 	places []Place
 }
 
-// Add appends Place to the collection.
+// Add добавление новых элементов в множество City
 func (c *City) Add(p Place) {
 	c.places = append(c.places, p)
 }
 
-// Accept implements a visit to all places in the city.
+// Accept имплементация метода посещения для всех элементов
 func (c *City) Accept(v Visitor) string {
 	var result string
 	for _, p := range c.places {

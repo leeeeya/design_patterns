@@ -1,15 +1,10 @@
 package main
 
-// SushiBar implements the Place interface.
+// SushiBar "элемент", который можно посетить
 type SushiBar struct {
 }
 
-// Accept implementation.
+// Accept имплементация метода посещения
 func (s *SushiBar) Accept(v Visitor) string {
 	return v.VisitSushiBar(s)
-}
-
-// BuySushi implementation.
-func (s *SushiBar) BuySushi() string {
-	return "Buy sushi..."
 }

@@ -1,6 +1,6 @@
 package main
 
-// Place provides an interface for place that the visitor should visit.
+// Place интерфейс принятия посетителей для каждого места, которое можно посетить
 type Place interface {
 	Accept(v Visitor) string
 }

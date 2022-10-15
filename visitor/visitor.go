@@ -1,6 +1,6 @@
 package main
 
-// Visitor provides a visitor interface.
+// Visitor интерфейс посетителя с методами посещения для каждой конкретной структуры
 type Visitor interface {
 	VisitSushiBar(p *SushiBar) string
 	VisitPizzeria(p *Pizzeria) string
